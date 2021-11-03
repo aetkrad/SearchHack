@@ -9,7 +9,7 @@
 - 使用脚本爬取可能需要代理池等反爬虫手段
 - 通过人工审查能更精确。
 # 使用教程
-- 按F2点击SearchHack
+- 按F12点击SearchHack
 ![image](https://github.com/aetkrad/SearchHack/blob/main/images/2.png?raw=true)
 - 选择搜索引擎并填目标
 ![image](https://github.com/aetkrad/SearchHack/blob/main/images/3.png?raw=true)
@@ -98,12 +98,12 @@
   * sql: filename:sql
 
 - 文件路径（下拉菜单过长未添加）：
-  * _rsa: in:path _rsa
-  * _dsa：in:path _dsa
-  * _ed25519：in:path _ed25519
-  * _ecdsa: in:path _ecdsa
-  * bash_history: in:path bash_history
-  * zsh_history： in:path zsh_history
+  * _rsa
+  * _dsa
+  * _ed25519
+  * _ecdsa
+  * bash_history
+  * zsh_history
   * mysql_history
   * psql_history
   * pgpass
