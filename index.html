@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/bootstrap-3.3.7.min.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap-3.3.7.min.js"></script>
+  </head>
+  <style>
+    .dropdown-submenu { position: relative; } .dropdown-submenu>.dropdown-menu { top: 0; left: 100%; margin-top: -6px; margin-left: -1px; -webkit-border-radius: 0 6px 6px 6px; -moz-border-radius: 0 6px 6px; border-radius: 0 6px 6px 6px; } .dropdown-submenu:hover>.dropdown-menu { display: block; } .dropdown-submenu>a:after { display: block; content: " "; float: right; width: 0; height: 0; border-color: transparent; border-style: solid; border-width: 5px 0 5px 5px; border-left-color: #ccc; margin-top: 5px; margin-right: -10px; } .dropdown-submenu:hover>a:after { border-left-color: #fff; } .dropdown-submenu.pull-left { float: none; } .dropdown-submenu.pull-left>.dropdown-menu { left: -100%; margin-left: 10px; -webkit-border-radius: 6px 0 6px 6px; -moz-border-radius: 6px 0 6px 6px; border-radius: 6px 0 6px 6px; }
+  </style>
+  <body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">SearchHack</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a id="Clear" href="#">清空</a></li>
+          <li><a id="Execute" href="#">搜索</a></li>
+          <li><a href="#">|</a></li>
+          <!-- inurl -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">inurl <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a id="BackGround" href="#">后台地址</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="UpLoad" href="#">上传地址</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="SqlInJection" href="#">SQL注入</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="Editor" href="#">编辑器</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="Struts" href="#">Struts</a></li>
+            </ul>
+          </li>
+          <!-- flietype -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">filetype <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a id="xls" href="#">xls</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="pdf" href="#">pdf</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="doc" href="#">doc</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="ppt" href="#">ppt</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="rtf" href="#">rtf</a></li>
+            </ul>
+          </li>
+          <!-- intitle -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">intitle <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a id="DirectoryTraversal" href="#">目录遍历</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="Phpinfo" href="#">phpinfo</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="PhpMyAdmin" href="#">phpmyadmin</a></li>
+            </ul>
+          </li>
+          <!-- intext -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">intext <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a id="SqlError" href="#">SQL报错</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="FindSys" href="#">查询系统</a></li>
+
+            </ul>
+          </li>
+          <!-- ext -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ext <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a id="Backup" href="#">备份文件</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="DataBase" href="#">数据库</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="Config" href="#">配置文件</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="Log" href="#">日志文件</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="Document" href="#">文档文件</a></li>
+            </ul>
+          </li>
+          <li><a href="#">|</a></li>
+          <!-- github -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Github <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!-- email -->
+              <li class="dropdown-submenu">
+                <a  tabindex="-1" href="#">邮箱</a>
+                <ul class="dropdown-menu">
+                  <li><a id="Email" tabindex="-1" href="#">Email</a></li>
+                  <li><a id="Smtp" tabindex="-1" href="#">Smtp</a></li>
+                </ul>
+              </li>
+              <li role="separator" class="divider"></li>
+              <!-- database -->
+              <li class="dropdown-submenu">
+                <a  tabindex="-1" href="#">数据库</a>
+                <ul class="dropdown-menu">
+                  <li><a id="DataBase-1" tabindex="-1" href="#">sa password</a></li>
+                  <li><a id="DataBase-2" tabindex="-1" href="#">root password</a></li>
+                  <li><a id="DataBase-3" tabindex="-1" href="#">user id</a></li>
+                  <li><a id="DataBase-4" tabindex="-1" href="#">jdbc</a></li>
+                </ul>
+              </li>
+              <li role="separator" class="divider"></li>
+              <!-- password -->
+              <li class="dropdown-submenu">
+                <a  tabindex="-1" href="#">密码</a>
+                <ul class="dropdown-menu">
+                  <li><a id="Password-1" tabindex="-1" href="#">password</a></li>
+                  <li><a id="Password-2" tabindex="-1" href="#">passwd</a></li>
+                  <li><a id="Password-3" tabindex="-1" href="#">pass</a></li>
+                  <li><a id="Password-4" tabindex="-1" href="#">pwd</a></li>
+                </ul>
+              </li>
+              <li role="separator" class="divider"></li>
+              <!-- key -->
+              <li class="dropdown-submenu">
+                <a  tabindex="-1" href="#">密钥</a>
+                <ul class="dropdown-menu">
+                  <li><a id="Key-1" tabindex="-1" href="#">public_key</a></li>
+                  <li><a id="Key-2" tabindex="-1" href="#">publickey</a></li>
+                  <li><a id="Key-3" tabindex="-1" href="#">private_ke</a></li>
+                  <li><a id="Key-4" tabindex="-1" href="#">accessKeyId</a></li>
+                </ul>
+              </li>
+              <li role="separator" class="divider"></li>
+              <!-- info -->
+              <li class="dropdown-submenu">
+                <a  tabindex="-1" href="#">敏感文件</a>
+                <ul class="dropdown-menu">
+                  <li><a id="Info-1" tabindex="-1" href="#">config</a></li>
+                  <li><a id="Info-2" tabindex="-1" href="#">credential</a></li>
+                  <li><a id="Info-3" tabindex="-1" href="#">properties</a></li>
+                  <li><a id="Info-4" tabindex="-1" href="#">backup</a></li>
+                  <li><a id="Info-5" tabindex="-1" href="#">dump</a></li>
+                  <li><a id="Info-6" tabindex="-1" href="#">password</a></li>
+                  <li><a id="Info-7" tabindex="-1" href="#">secret</a></li>
+                  <li><a id="Info-8" tabindex="-1" href="#">setting</a></li>
+                  <li><a id="Info-9" tabindex="-1" href="#">log</a></li>
+                  <li><a id="Info-10" tabindex="-1" href="#">sql</a></li>
+                </ul>
+              </li>
+              <li role="separator" class="divider"></li>
+              <!-- service -->
+              <li class="dropdown-submenu">
+                <a  tabindex="-1" href="#">服务</a>
+                <ul class="dropdown-menu">
+                  <li><a id="Service-1" tabindex="-1" href="#">ftp</a></li>
+                  <li><a id="Service-2" tabindex="-1" href="#">svn</a></li>
+                </ul>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li><a id="Copyright" href="#">版权所有</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="Language" href="#">开发语言</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="IP" href="#">IP地址</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="Host" href="#">主机地址</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="Url" href="#">URL地址</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="Proxy" href="#">代理</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="Auth" href="#">认证</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a id="InHome" href="#">内部</a></li>
+            </ul>
+          </li>
+          <!-- by -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">by aetkrad <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a id="By" href="#">关于SearchHack</a></li>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-3">
+      <label class="radio-inline ">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Google"> Google
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Baidu"> Baidu
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="Bing"> Bing
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="Github"> Github
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="clearfix" style="margin-bottom: 10px;"></div>
+    <div class="col-md-2"></div>
+    <div class="col-md-2">
+      <input type="text" class="form-control" id="targetInput" placeholder="site:'domain.com'|目标名称">
+    </div>
+    <div class="col-md-3">
+      <input type="text" class="form-control" id="contentInput" placeholder="搜索内容">
+    </div>
+  </div>
+
+  </body>
+  <script src="js/index.js" type="text/javascript"></script>
+</html>
