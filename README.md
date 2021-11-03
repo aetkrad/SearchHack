@@ -5,20 +5,20 @@
 
 # 开发原因
 
-（1）搜索敏感信息时要一直复制规则，很麻烦。
-（2）使用脚本爬取可能需要代理池等反爬虫手段
-（3）通过人工审查能更精确。
+- 搜索敏感信息时要一直复制规则，很麻烦。
+- 使用脚本爬取可能需要代理池等反爬虫手段
+- 通过人工审查能更精确。
 # 使用教程
-（1）按F2点击SearchHack
+- 按F2点击SearchHack
 ![image](https://github.com/aetkrad/SearchHack/blob/main/images/2.png?raw=true)
-（2）选择搜索引擎并填目标
+- 选择搜索引擎并填目标
 ![image](https://github.com/aetkrad/SearchHack/blob/main/images/3.png?raw=true)
 
-（3）选择搜索条件
+- 选择搜索条件
 搜索条件可以累加，同时还可以点清空进行一键清空。
 ![image](https://github.com/aetkrad/SearchHack/blob/main/images/4.png?raw=true)
 
-（4）点击搜索
+- 点击搜索
 ![image](https://github.com/aetkrad/SearchHack/blob/main/images/5.png?raw=true)
 页面会自动跳转
 ![image](https://github.com/aetkrad/SearchHack/blob/main/images/6.png?raw=true)
@@ -97,7 +97,7 @@
   * log: filename:log
   * sql: filename:sql
 
-- 文件路径（）：
+- 文件路径（下拉菜单过长未添加）：
   * _rsa: in:path _rsa
   * _dsa：in:path _dsa
   * _ed25519：in:path _ed25519
